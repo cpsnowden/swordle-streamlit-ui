@@ -2,8 +2,8 @@
 install_requirements:
 	@pip install -r requirements.txt
 
-streamlit:
-	-@streamlit run app.py
+run:
+	-@streamlit run Home.py
 
 install:
 	@pip install . -U
