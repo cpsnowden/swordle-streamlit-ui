@@ -3,8 +3,9 @@ import streamlit as st
 
 st.set_page_config(page_title="Picture Demo")
 
+# Env?
 # URL = "http://0.0.0.0:8000/letter-prediction/frame"
-URL = "https://sign-game-server-yckhsn477a-uc.a.run.app/letter-prediction/image"
+URL = "https://sign-game-server-yckhsn477a-uc.a.run.app/letter-prediction/frame"
 
 img_file_buffer = st.camera_input("Take a picture")
 
