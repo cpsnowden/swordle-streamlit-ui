@@ -26,3 +26,7 @@ if img_file_buffer is not None:
         else:
             st.markdown("**Oops**, something went wrong 😓 Please try again.")
             print(res.status_code, res.content)
+
+st.image(
+    "https://adayinourshoes.com/wp-content/uploads/Sign-Language-Alphabet-PDF.png"
+)
