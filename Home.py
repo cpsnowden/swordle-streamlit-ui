@@ -19,10 +19,14 @@ if img_file_buffer is not None:
         print(f"Making request to {BACKEND_API}")
         res = requests.post(BACKEND_API, files={'img': img_bytes})
 
+        json = res.json()
         if res.status_code == 200:
-            ### Display the image returned by the API
-            prediction = res.json()['prediction']
+            ### Display the prediction returned by the API
+            prediction = json['prediction']
             st.title(f"Predicted '{prediction.upper()}'")
+        elif res.status_code == 400 and 'detail' in json:
+            ### Display the error returned by the API
+            st.title(json['detail'])
         else:
             st.markdown("**Oops**, something went wrong 😓 Please try again.")
             print(res.status_code, res.content)
